@@ -99,13 +99,15 @@ void teardown() {
 }
 
 int main() {
-    add_test("Addition", test_addition, NULL, NULL);
-    add_test("Subtraction", test_subtraction, setup, teardown);
+  const char *log_file_path = "test_results.json";
 
-    int failures = run_tests();
-    printf("Total failures: %d\n", failures);
+  add_test("Addition", test_addition, NULL, NULL);
+  add_test("Subtraction", test_subtraction, setup, teardown);
 
-    return failures > 0 ? EXIT_FAILURE : EXIT_SUCCESS;
+  int failures = run_tests(log_file_path);
+  printf("Total failures: %d\n", failures);
+
+  return failures > 0 ? EXIT_FAILURE : EXIT_SUCCESS;
 }
 
 ```
