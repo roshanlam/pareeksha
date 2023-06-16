@@ -50,7 +50,7 @@ add_test("Addition", test_addition, setup, teardown);
 ```
 
 5. Review the test results and the total number of failures.
-```
+```c
 printf("Total failures: %d\n", failures);
 ```
 
